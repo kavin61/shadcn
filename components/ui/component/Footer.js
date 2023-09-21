@@ -11,30 +11,30 @@ const Footer = () => {
         <div className="grid grid-cols-3 p-7">
           <div className="p-10">
             <h1 className="mb-5 font-bold text-4xl">About</h1>
-            <p className="mb-2">Carriers</p>
-            <p className="mb-2">Stand Social Impacts</p>
-            <p className="mb-2">Affliates</p>
-            <p className="mb-2">Supply Chain Transparency</p>
-            <p className="mb-2">Sitemap</p>
-            <p className="mb-2">Global Sites</p>
+            <p className="mb-2 hover:underline">Carriers</p>
+            <p className="mb-2 hover:underline">Stand Social Impacts</p>
+            <p className="mb-2 hover:underline">Affliates</p>
+            <p className="mb-2 hover:underline">Supply Chain Transparency</p>
+            <p className="mb-2 hover:underline">Sitemap</p>
+            <p className="mb-2 hover:underline">Global Sites</p>
           </div>
           <div className="p-10">
             <h1 className="mb-5 font-bold text-4xl">My Account</h1>
-            <p className="mb-2"> Order Status</p>
-            <p className="mb-2">Rewards Bazar </p>
-            <p className="mb-2">Loves</p>
-            <p className="mb-2">Flash Unlimites Shipping</p>
-            <p className="mb-2">Sitemap</p>
-            <p className="mb-2">Global Sites</p>
+            <p className="mb-2 hover:underline"> Order Status</p>
+            <p className="mb-2 hover:underline">Rewards Bazar </p>
+            <p className="mb-2 hover:underline">Loves</p>
+            <p className="mb-2 hover:underline">Flash Unlimites Shipping</p>
+            <p className="mb-2 hover:underline">Sitemap</p>
+            <p className="mb-2 hover:underline">Global Sites</p>
           </div>
           <div className="p-10">
             <h1 className="mb-5 font-bold text-4xl">Help & FAQs</h1>
-            <p className="mb-2">Online Ordering</p>
-            <p className="mb-2">Shipping</p>
-            <p className="mb-2">Billing</p>
-            <p className="mb-2">Returns and Exchanges</p>
-            <p className="mb-2">Customer Service</p>
-            <p className="mb-2">Contact use</p>
+            <p className="mb-2 hover:underline">Online Ordering</p>
+            <p className="mb-2 hover:underline">Shipping</p>
+            <p className="mb-2 hover:underline">Billing</p>
+            <p className="mb-2 hover:underline">Returns and Exchanges</p>
+            <p className="mb-2 hover:underline">Customer Service</p>
+            <p className="mb-2 hover:underline">Contact use</p>
           </div>
         </div>
         <div
@@ -49,14 +49,14 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <ul class="flex justify-center mt-5 space-x-5">
+            <ul className="flex justify-center mt-5 space-x-5">
               <li>
                 <a
                   href="#"
-                  class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
                 >
                   <svg
-                    class="w-10 h-10"
+                    className="w-10 h-10"
                     fill="white"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -72,10 +72,10 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
                 >
                   <svg
-                    class="w-10 h-10"
+                    className="w-10 h-10"
                     fill="white"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -91,10 +91,10 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
                 >
                   <svg
-                    class="w-10 h-10"
+                    className="w-10 h-10"
                     fill="white"
                     viewBox="0 0 24 24"
                     aria-hidden="true"

@@ -1,25 +1,16 @@
 import React, { useEffect, useState } from "react";
-
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Card } from "@/components/ui/card";
+
+import QuickPreview from "./QuickPreview";
 const NewArrivals = () => {
   let [data, setData] = useState([]);
+  const [editModel, setEditModel] = useState(false);
+  const [bookData, setBookData] = useState({});
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const closeModal = () => {
+    setEditModel(false);
+  };
 
   useEffect(() => {
     let jsonData = [
@@ -70,7 +61,7 @@ const NewArrivals = () => {
         title: "DBILL BRYSON DOWN UNDER",
         author: "BILL BRYSON",
         description:
-          "achel Sexton Works For The National Reconnaissance Office As An Intelligence Officer. She Is Also The Daughter Of A Senator Currently Running For President. Her Fathers Main Offensive, And A Very Popular One, Against The Incumbent President Is To Attack The Huge Amount Of NASA Funding. Rachel Is Barely On Speaking Terms With Her Father, Believing Him To Be Totally Corrupt, But Is Still Worried She Is Being Used By The President When He Asks Her To Verify An Amazing Find By NASA, A Find Which Will Settle The Arguments About NASA Funding For Ever.",
+          "Intelligence Office. She Is Also The Daughter Of A Senator Currently Running For President. Her Fathers Main Offensive, And A Very Popular One, Against The Incumbent President Is To Attack The Huge Amount Of NASA Funding. Rachel Is Barely On Speaking Terms With Her Father, Believing Him .",
         picture:
           "https://bc-img.s3.ap-south-1.amazonaws.com/images/cover/bc/9780552997034_16712669550.jpg",
         rating: 3,
@@ -84,7 +75,7 @@ const NewArrivals = () => {
         title: "The Catcher in the Rye ",
         author: "J. D. Salinger",
         description:
-          "The Catcher in the Rye is an American novel by J. D. Salinger that was partially published in serial form 1945–46 before being novelized in 1951. Originally intended for adults, it is often read by adolescents for its themes of angst and alienation, and as a critique of superficiality in society.[4][5] The novel also deals with complex issues of innocence, identity, belonging, loss, connection, sex, and depression. The main character, Holden Caulfield, has become an icon for teenage rebellion.[6] Caulfield, nearly of age, gives his opinion on a wide variety of topics as he narrates his recent life events.",
+          "The Catcher in the Rye is an American novel by J. D. Salinger that was partially published in serial form 1945–46 before being novelized in 1951. Originally intended for adults, it is often read by adolescents for its themes of angst and alienation, and as a critique .",
         picture:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg/220px-The_Catcher_in_the_Rye_%281951%2C_first_edition_cover%29.jpg",
         rating: 3,
@@ -98,7 +89,7 @@ const NewArrivals = () => {
         title: "DECEPTION POINT ",
         author: "DAN BROWN",
         description:
-          "achel Sexton Works For The National Reconnaissance Office As An Intelligence Officer. She Is Also The Daughter Of A Senator Currently Running For President. Her Fathers Main Offensive, And A Very Popular One, Against The Incumbent President Is To Attack The Huge Amount Of NASA Funding. Rachel Is Barely On Speaking Terms With Her Father, Believing Him To Be Totally Corrupt, But Is Still Worried She Is Being Used By The President When He Asks Her To Verify An Amazing Find By NASA, A Find Which Will Settle The Arguments About NASA Funding For Ever.",
+          "achel Sexton Works For The National Reconnaissance Office As An Intelligence Officer. She Is Also The Daughter Of A Senator Currently Running For President. Her Fathers Main Offensive, And A Very Popular One, Against The ",
         picture:
           "https://bc-img.s3.ap-south-1.amazonaws.com/images/cover/568/9780552151764.jpg",
         rating: 4,
@@ -112,7 +103,7 @@ const NewArrivals = () => {
         title: "The Line of Beauty",
         author: "Alan Hollinghurst",
         description:
-          "The novel begins in the summer of 1983, shortly after Margaret Thatcher's second victory in the general election. Nick moves into the luxurious Notting Hill home of the Fedden family. The Feddens' son, Toby, is Nick's Oxford University classmate on whom he has a secret crush. Nick's stay is meant to last for a short time while Toby and his parents—Rachel, the daughter of an extremely wealthy Rothschild-like Jewish family, and Gerald, a successful businessman and just-elected Conservative MP for Barwick—are at their holiday home in France. Left at home with Nick is the Feddens' daughter Catherine whom the Feddens are reluctant to leave on her own because of her history of self-harming. Nick helps Cat through a crisis when she considers cutting herself, and when her parents return they suggest he stay on indefinitely, since Cat has become attached to him and Toby is moving into his own place.",
+          " Nick moves into the luxurious Notting Hill home of the Fedden family. since Cat has become attached to him and Toby is moving into his own place.",
         picture:
           "https://ik.imagekit.io/panmac/tr:f-auto,di-placeholder_portrait_aMjPtD9YZ.jpg,w-270/edition/9781529077209.jpg",
         rating: 4,
@@ -126,7 +117,7 @@ const NewArrivals = () => {
         title: "A Tale of Two Cities",
         author: "Charles Dickens",
         description:
-          "In 1775, Jerry Cruncher flags down the nightly mail-coach en route from London to Dover. Cruncher is an employee of Tellson's Bank in London; he carries a message for Jarvis Lorry, one of the bank's managers. Lorry sends Jerry back with the cryptic response \"Recalled to Life\", referring to Alexandre Manette, a French physician who has been released from the Bastille after an 18-year imprisonment. On arrival in Dover, Lorry meets Dr Manette's daughter Lucie and her governess, Miss Pross. Believing her father to be dead, Lucie faints at the news that he is alive. Lorry takes her to France for a reunion.",
+          "In 1775, Jerry Cruncher flags down the nightly mail-coach en route from London to Dover. Cruncher is an employee of Tellson's Bank in London; he carries a message for Jarvis ",
         picture:
           "https://upload.wikimedia.org/wikipedia/commons/3/3c/Tales_serial.jpg",
         rating: 4,
@@ -145,7 +136,7 @@ const NewArrivals = () => {
         NewArrivals{" "}
       </h1>
 
-      <div className="grid grid-cols-4 ">
+      <div className="grid grid-cols-4 relative ">
         {data.map((item) => (
           <div className="">
             <div className="ml-10 p-2 w-[220px] mb-10">
@@ -161,6 +152,11 @@ const NewArrivals = () => {
                 <Button
                   variant="secondary"
                   className="mt-2 bg-red-600 text-white hover:bg-red-600 opacity-0 group-hover:opacity-100 rounded-bl-2xl"
+                  onClick={() => {
+                    setBookData(item);
+                    setEditModel(true);
+                    setIsDialogOpen(true);
+                  }}
                 >
                   Quick Preview
                 </Button>
@@ -187,6 +183,13 @@ const NewArrivals = () => {
           </div>
         ))}
       </div>
+      {editModel && (
+        <QuickPreview
+          data={bookData}
+          editModel={editModel}
+          closeModal={closeModal}
+        />
+      )}
     </div>
   );
 };
