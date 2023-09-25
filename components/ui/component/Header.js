@@ -21,7 +21,9 @@ const Header = () => {
           <Link className="cursor-pointer" href={"/product"}>
             All products
           </Link>
-          <span className="cursor-pointer">Cart</span>
+          <Link className="cursor-pointer" href={"/cart"}>
+            Cart
+          </Link>
         </div>
 
         <div>

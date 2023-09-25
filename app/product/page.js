@@ -1,11 +1,28 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Glider from "react-glider";
 import "glider-js/glider.min.css";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/ui/component/Footer";
+import axios from "axios";
 const index = () => {
+  const [product, setProduct] = useState("");
+  async function fetchData() {
+    try {
+      const response = await axios.get(
+        "http://localhost:3001/api/v1/book/product/"
+      );
+      setProduct(response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <h1 className="text-[40px] font-bold mb-7 mt-4 ml-3">Top Sellers</h1>
